@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class MapGenerator : MonoBehaviour
+public class MapGenerator : GameManager
 {
-    public string filePath = @"C:\Bai tap HB_Academy\GitHub\Everything-Here\StackMaker_HoangPM\Assets\_Game\File_Map\Map1.txt";
+    public string filePath = @"C:\Bai tap HB_Academy\GitHub\Project-1\StackMaker_HoangPM\Assets\_Game\File_Map\Map1.txt";
 
     public float tileSize = 1f;
 
@@ -14,13 +14,13 @@ public class MapGenerator : MonoBehaviour
     public GameObject wallPrefab;
     public GameObject brickPrefab;
     public GameObject finishPrefab;
-    public GameObject railPrefab;
+    public GameObject bridgePrefab;
     public GameObject startPrefab;
 
-    void Start()
+    public override void Oninit()
     {
+        base.Oninit();
         ReadTextFile();
-
         GenerateMap();
     }
 
@@ -65,7 +65,7 @@ public class MapGenerator : MonoBehaviour
                         prefab = brickPrefab;
                         break;
                     case '2':
-                        prefab = railPrefab;
+                        prefab = bridgePrefab;
                         break;
                     case '3':
                         prefab = startPrefab;

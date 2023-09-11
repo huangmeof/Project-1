@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Oninit();
+    }
+    public virtual void Oninit()
+    {
 
+    }
 }
